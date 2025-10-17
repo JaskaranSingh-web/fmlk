@@ -1,0 +1,36 @@
+services:
+  wordpress:
+    image: wordpress:php8.2-apache
+    ports:
+      - "8000:80"
+    volumes:
+      - wordpress_data:/var/www/html
+      - ./wp-content:/var/www/html/wp-content
+      - ./wp-config.php:/var/www/html/wp-config.php
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/mysql
+
+  wpcli:
+    image: wordpress:cli
+    depends_on:
+      - db
+    volumes:
+      - wordpress_data:/var/www/html
+      - ./wp-content:/var/www/html/wp-content
+      - ./wp-config.php:/var/www/html/wp-config.php
+    working_dir: /var/www/html
+    entrypoint: wp
+
+volumes:
+  db_data:
+  wordpress_data:

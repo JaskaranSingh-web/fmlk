@@ -1,0 +1,51 @@
+# WordPress core files 
+/wp-admin/
+/wp-includes/
+/index.php
+/license.txt
+/readme.html
+
+# Sage theme build files (compiled assets)
+/wp-content/themes/fmlk-custom-theme/node_modules/
+/wp-content/themes/fmlk-custom-theme/vendor/
+/wp-content/themes/fmlk-custom-theme/.cache/
+/wp-content/themes/fmlk-custom-theme/dist/
+/wp-content/themes/fmlk-custom-theme/.env
+wp-admin/
+wp-includes/
+
+# Sage build files (optional, depends on your setup)
+dist/
+build/
+
+# Node.js/Yarn
+/node_modules/
+node_modules/
+/.yarn/cache/
+/.yarn/unplugged/
+/.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Vendor directory (PHP dependencies managed by composer)
+vendor/
+
+# Docker
+docker-compose.override.yml
+.env
+db_data/
+*.env
+
+# Logs and debug files
+*.log
+wp-content/debug.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+#db dumps
+*.sql
+
+# Backup files
+*.bak
+*.swp
