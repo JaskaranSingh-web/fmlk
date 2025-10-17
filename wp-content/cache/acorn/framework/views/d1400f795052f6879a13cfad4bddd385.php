@@ -12,7 +12,7 @@
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['type' => 'warning']); ?>
-      <?php echo __('Sorry, no results were found.', 'sage'); ?>
+      <?php echo __('Sorry, but the page you are trying to view does not exist.', 'sage'); ?>
 
      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
@@ -28,17 +28,6 @@
     <?php echo get_search_form(false); ?>
 
   <?php endif; ?>
-
-  <?php while(have_posts()): ?> <?php (the_post()); ?>
-    <?php echo $__env->first(['partials.content-' . get_post_type(), 'partials.content'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-  <?php endwhile; ?>
-
-  <?php echo get_the_posts_navigation(); ?>
-
 <?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('sidebar'); ?>
-  <?php echo $__env->make('sections.sidebar', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-<?php $__env->stopSection(); ?>
-
-<?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH /var/www/html/wp-content/themes/fmlk-custom-theme/resources/views/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH /var/www/html/wp-content/themes/fmlk-custom-theme/resources/views/404.blade.php ENDPATH**/ ?>

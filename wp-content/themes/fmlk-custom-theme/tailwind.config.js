@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
-      './resources/views/**/*.blade.php',
-      './resources/scripts/**/*.js',
-    ],
+        './resources/views/**/*.blade.php',
+        './resources/scripts/**/*.js',
+      ],
     theme: {
         container: {
           center: true,
