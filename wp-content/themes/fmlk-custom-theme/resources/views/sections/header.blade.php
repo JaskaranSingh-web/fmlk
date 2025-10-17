@@ -5,7 +5,7 @@
       {{-- Logo --}}
       <div class="w-1/3">
         <a class="text-xl font-heading" href="{{ home_url('/') }}">
-          {!! $siteName !!}
+          <img src="@assets('images/FMLK.jpg')" alt="Fat Man Little Kitchen logo">
         </a>
       </div>
 

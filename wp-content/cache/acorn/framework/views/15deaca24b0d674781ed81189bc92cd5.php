@@ -5,8 +5,7 @@
       
       <div class="w-1/3">
         <a class="text-xl font-heading" href="<?php echo e(home_url('/')); ?>">
-          <?php echo $siteName; ?>
-
+          <img src="@assets('images/FMLK.jpg')" alt="Fat Man Little Kitchen logo">
         </a>
       </div>
 
