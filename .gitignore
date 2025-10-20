@@ -7,7 +7,6 @@
 
 # Sage theme build files (compiled assets)
 /wp-content/themes/fmlk-custom-theme/node_modules/
-/wp-content/themes/fmlk-custom-theme/vendor/
 /wp-content/themes/fmlk-custom-theme/.cache/
 /wp-content/themes/fmlk-custom-theme/dist/
 /wp-content/themes/fmlk-custom-theme/.env
@@ -25,9 +24,6 @@ node_modules/
 /.yarn/unplugged/
 /.yarn/build-state.yml
 .yarn/install-state.gz
-
-# Vendor directory (PHP dependencies managed by composer)
-vendor/
 
 # Docker
 docker-compose.override.yml
