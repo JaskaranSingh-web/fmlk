@@ -1,52 +1,85 @@
 <header class="banner bg-primary text-secondary">
   <div class="container py-4">
-    {{-- Top row: Logo | Search | Shop Icon --}}
-    <div class="flex items-center justify-between">
+
+    {{-- Top row: Logo and Mobile Menu --}}
+    <div class="flex flex-wrap items-center justify-between">
+
       {{-- Logo --}}
-      <div class="w-1/3">
+      <div class="flex-1 min-w-[0]">
         <a class="text-xl font-heading" href="{{ home_url('/') }}">
           <img src="@assets('images/FMLK.jpg')" alt="Fat Man Little Kitchen logo">
         </a>
       </div>
 
-      {{-- Search --}}
-      <div class="w-1/3 flex justify-center">
+      {{-- Desktop search (≥1360px) --}}
+      <div class="hidden xl:flex flex-1 justify-end">
         <form role="search" method="get" class="w-full max-w-md" action="{{ esc_url(home_url('/')) }}">
           <label for="search" class="sr-only">Search</label>
-          <input
-            type="search"
-            id="search"
-            class="w-full px-4 py-2 rounded bg-white text-black"
-            placeholder="Search..."
-            value="{{ get_search_query() }}"
-            name="s"
-          />
+          <input type="search" id="search"
+                 class="w-full px-4 py-2 rounded bg-white text-black"
+                 placeholder="Search..."
+                 value="{{ get_search_query() }}"
+                 name="s" />
         </form>
       </div>
 
-      {{-- Shop Icon --}}
-      <div class="w-1/3 flex justify-end">
-        <a href="{{ wc_get_cart_url() }}" class="relative group">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-white group-hover:fill-accent" viewBox="0 0 24 24">
-            <path d="M6 6h15l-1.5 9h-13z"/><circle cx="9" cy="21" r="1"/><circle cx="18" cy="21" r="1"/>
+      {{-- Mobile Menu Toggle (<1360px) --}}
+      <div class="xl:hidden mt-2 flex-shrink-0">
+        <button id="mobileMenuButton"
+                class="text-white bg-red-600 hover:bg-red-700 focus:ring-2 focus:outline-none focus:ring-red-700
+                       font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center"
+                type="button">
+          <svg id="hamburgerIcon" class="w-6 h-6 block" xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15" />
           </svg>
-          {{-- Optional: cart item count --}}
-          @if (WC()->cart && WC()->cart->get_cart_contents_count())
-            <span class="absolute -top-2 -right-2 text-xs bg-accent text-white rounded-full px-1">
-              {{ WC()->cart->get_cart_contents_count() }}
-            </span>
+          <svg id="closeIcon" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        {{-- Mobile Dropdown --}}
+        <div id="mobileMenu" class="hidden absolute right-0 mt-2 bg-primary rounded shadow w-44 z-50">
+          @if(has_nav_menu('primary_navigation'))
+            {!! wp_nav_menu([
+              'theme_location' => 'primary_navigation',
+              'menu_class' => 'flex flex-col gap-2 py-2',
+              'container' => false,
+              'echo' => false,
+              'walker' => new App\Nav\Menu_Walker()
+            ]) !!}
           @endif
-        </a>
+        </div>
       </div>
+
+      {{-- Mobile search (<1360px) --}}
+      <div class="w-full xl:hidden mt-4">
+        <form role="search" method="get" class="w-full max-w-md mx-auto" action="{{ esc_url(home_url('/')) }}">
+          <label for="search" class="sr-only">Search</label>
+          <input type="search" id="search"
+                 class="w-full px-4 py-2 rounded bg-white text-black"
+                 placeholder="Search..."
+                 value="{{ get_search_query() }}"
+                 name="s" />
+        </form>
+      </div>
+
     </div>
   </div>
 
-  {{-- Bottom row: Navigation --}}
-  @if (has_nav_menu('primary_navigation'))
-    <nav class="bg-primary text-secondary flex items-center">
-      <div class="container">
-        {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'flex gap-6 py-3', 'echo' => false]) !!}
-      </div>
+  {{-- Bottom row: Desktop Navigation (≥1360px) --}}
+  @if(has_nav_menu('primary_navigation'))
+    <nav class="bg-primary text-secondary hidden xl:flex justify-center">
+      {!! wp_nav_menu([
+        'theme_location' => 'primary_navigation',
+        'menu_class' => 'flex gap-6 py-3',
+        'container' => false,
+        'echo' => false,
+        'walker' => new App\Nav\Menu_Walker()
+      ]) !!}
     </nav>
   @endif
 </header>

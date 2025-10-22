@@ -1,6 +1,9 @@
 @config "../../tailwind.config.js";
 
+@import "flowbite";
+
 @import "tailwindcss";
+
 
 @font-face {
     font-family: 'CandyRound';
@@ -8,4 +11,8 @@
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-  }
+}
+
+a {
+  text-decoration: none;
+}
