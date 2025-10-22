@@ -20,6 +20,7 @@
     </section>
 
     <section class="my-20 flex flex-col gap-5">
+        <h2 class="text-2xl">What we do</h3>
         <p> 
             At Fat Man Little Kitchen, we provide food services, and the thing which started it all; high end
             sauces and spice blends that are well above industry standard. We also have a business model
@@ -40,8 +41,6 @@
             taking people to the next level of spicy and exciting food.
         </p>
     </section>
-
-
 
     <section id="default-carousel" class="relative w-full py-10" data-carousel="slide">
         <!-- Carousel wrapper -->
@@ -106,10 +105,9 @@
         </button>
     </section>
 
+    <section class="my-20 flex flex-col gap-5">
+        <h3 class="text-2xl">Want to learn more?</h3>
+        <p>Check out our <a class="text-red-700" href="about">about</a> us page or take a look at our products in our <a class="text-red-700" href="shop">shop</a>.</p>
 
-
-
-
-
-
+    </section>
 @endsection
