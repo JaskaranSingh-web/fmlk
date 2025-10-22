@@ -1,3 +1,24 @@
-<footer class="content-info">
-  @php(dynamic_sidebar('sidebar-footer'))
+<footer class="bg-primary text-secondary w-full">
+    <div class="container mx-auto py-10 flex flex-col items-center md:flex-row md:items-center md:justify-between">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© Fatmanlittlekitchen 
+        @php
+          echo date('Y')
+        @endphp All Rights Reserved.
+    </span>
+    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+        <li>
+            <a href="#" class="hover:underline me-4 md:me-6">About</a>
+        </li>
+        <li>
+            <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+        </li>
+        <li>
+            <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+        </li>
+        <li>
+            <a href="#" class="hover:underline">Contact</a>
+        </li>
+    </ul>
+    </div>
 </footer>
+

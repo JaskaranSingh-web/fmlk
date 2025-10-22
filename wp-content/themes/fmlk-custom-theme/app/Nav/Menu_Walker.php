@@ -30,7 +30,7 @@ class Menu_Walker extends \Walker_Nav_Menu {
             $output .= ' <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M5 8l5 5 5-5H5z"/></svg>';
             $output .= '</button>';
         } else {
-            $output .= '<a href="'. esc_url($item->url) .'" class="block px-4 py-2 hover:bg-gray-800">';
+            $output .= '<a href="'. esc_url($item->url) .'" class="block px-4 py-2 hover:rounded-md hover:bg-gray-800 hover:text-red-600">';
             $output .= esc_html($item->title);
             $output .= '</a>';
         }

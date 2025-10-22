@@ -5,7 +5,7 @@
 .env
 npm-debug.log
 /cache/
-/wp-content/cache/acorn/
-/wp-content/uploads/
+/wp-content/cache/*
+/wp-content/uploads/*
 
 
