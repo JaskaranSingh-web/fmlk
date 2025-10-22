@@ -1,8 +1,3 @@
-import.meta.glob([
-  '../images/**',
-  '../fonts/**',
-]);
-
 import 'flowbite';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -12,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeIcon = document.getElementById('closeIcon');
 
   btn.addEventListener('click', () => {
-    const isMenuHidden = menu.classList.contains('hidden');
     menu.classList.toggle('hidden');
     hamburger.classList.toggle('hidden');
     closeIcon.classList.toggle('hidden');

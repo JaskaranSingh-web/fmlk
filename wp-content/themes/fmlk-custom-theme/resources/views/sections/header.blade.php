@@ -6,8 +6,9 @@
 
       {{-- Logo --}}
       <div class="flex-1 min-w-[0]">
-        <a class="text-xl font-heading" href="{{ home_url('/') }}">
-          <img src="@assets('images/FMLK.jpg')" alt="Fat Man Little Kitchen logo">
+        <a class="text-xl font-heading inline-block" href="{{ home_url('/') }}">
+          <img src="{{ get_stylesheet_directory_uri() }}/resources/images/FMLK.jpg" alt="Logo"
+          class="h-30 w-auto object-contain">
         </a>
       </div>
 
