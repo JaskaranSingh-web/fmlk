@@ -13,7 +13,7 @@ use Roots\Acorn\Application;
 |
 */
 
-if (! file_exists($composer = __DIR__.'/vendor/autoload.php')) {
+if (! file_exists($composer = __DIR__ . '/vendor/autoload.php')) {
     wp_die(__('Error locating autoloader. Please run <code>composer install</code>.', 'sage'));
 }
 
@@ -58,3 +58,9 @@ collect(['setup', 'filters'])
             );
         }
     });
+
+add_action('after_setup_theme', function () {
+    if (function_exists('load_theme_textdomain')) {
+        load_theme_textdomain('sage', get_template_directory() . '/lang');
+    }
+});
