@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-  @include('partials.page-header')
+
+<div class="my-20"></div>
+ 
 
   @if (! have_posts())
     <x-alert type="warning">
@@ -18,6 +20,3 @@
   {!! get_the_posts_navigation() !!}
 @endsection
 
-@section('sidebar')
-  @include('sections.sidebar')
-@endsection

@@ -1,23 +1,15 @@
 <article @php(post_class('h-entry'))>
-  <header>
-    <h1 class="p-name">
-      {!! $title !!}
-    </h1>
 
-    @include('partials.entry-meta')
-  </header>
-
-  <div class="e-content">
+  <div class="e-content my-20">
     @php(the_content())
   </div>
 
   @if ($pagination())
-    <footer>
+    <div>
       <nav class="page-nav" aria-label="Page">
         {!! $pagination !!}
       </nav>
-    </footer>
+    </div>
   @endif
 
-  @php(comments_template())
 </article>
