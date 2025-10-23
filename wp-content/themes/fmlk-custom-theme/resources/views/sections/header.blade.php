@@ -8,7 +8,7 @@
       <div class="flex-1 min-w-[0]">
         <a class="text-xl font-heading inline-block" href="{{ home_url('/') }}">
           <img src="{{ get_stylesheet_directory_uri() }}/resources/images/FMLK.jpg" alt="Logo"
-          class="h-30 w-auto object-contain">
+          class="h-30 w-auto object-contain rounded-4xl">
         </a>
       </div>
 
