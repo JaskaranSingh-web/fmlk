@@ -24,5 +24,13 @@ class ThemeServiceProvider extends SageServiceProvider
     public function boot()
     {
         parent::boot();
+
+        /**
+         * Fix for WordPress 6.7+ translation timing notice.
+         * Load Sage textdomain after 'after_setup_theme' instead of during early boot.
+         */
+        add_action('after_setup_theme', function () {
+            load_theme_textdomain('sage', get_template_directory() . '/lang');
+        }, 20);
     }
 }
