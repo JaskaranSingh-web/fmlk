@@ -1,4 +1,5 @@
 <?php
+add_filter('wp_installing', '__return_true');
 
 use Roots\Acorn\Application;
 
