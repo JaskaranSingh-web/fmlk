@@ -5,9 +5,9 @@
         <h1 class="text-5xl font-bold text-primary">Award winning hot sauces and catering</h1>
         <p class="mt-4 text-3xl font-accent text-primary">Never trust a skinny cook</p>
         <a href="{{ get_permalink(get_page_by_path('shop')) }}"
-            class="mt-6 inline-block bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-500">Our products</a>
+            class="mt-6 inline-block bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700">Our products</a>
         <a href="{{ get_permalink(get_page_by_path('catering')) }}"
-            class="mt-6 inline-block bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-500">Catering</a>
+            class="mt-6 inline-block bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700">Catering</a>
     </section>
 
     <section class="relative w-full pb-[56.25%] my-5">
